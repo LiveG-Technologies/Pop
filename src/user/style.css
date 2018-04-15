@@ -1,24 +1,5 @@
-html {
-    height: 100%;
-}
-
 body {
-    background: -moz-radial-gradient(center, ellipse cover, rgba(64,64,64,1) 0%, rgba(64,64,64,1) 25%, rgba(38,38,38,1) 70%, rgba(13,13,13,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(64,64,64,1)), color-stop(25%, rgba(64,64,64,1)), color-stop(70%, rgba(38,38,38,1)), color-stop(100%, rgba(13,13,13,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(64,64,64,1) 0%, rgba(64,64,64,1) 25%, rgba(38,38,38,1) 70%, rgba(13,13,13,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(64,64,64,1) 0%, rgba(64,64,64,1) 25%, rgba(38,38,38,1) 70%, rgba(13,13,13,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(64,64,64,1) 0%, rgba(64,64,64,1) 25%, rgba(38,38,38,1) 70%, rgba(13,13,13,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(64,64,64,1) 0%, rgba(64,64,64,1) 25%, rgba(38,38,38,1) 70%, rgba(13,13,13,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#404040", endColorstr="#0d0d0d",GradientType=1);
-    color: white;
     font-family: "Roboto", "Piboto", sans-serif;
-    text-align: center;
-    padding-top: 25vh;
-    transition: padding-top 2s;
-}
-
-#logo {
-    height: 50vh;
 }
 
 #info {

@@ -4,7 +4,7 @@ function change(user) {
     if (typeof(Storage) !== "undefined") {
         if (user && user.uid != currentUid) {
             // Sign in operation.
-            window.location.href = "home.html"
+            window.location.href = "user/index.html"
         } else {
             // Sign out operation.
             document.getElementById("signIn").style.display = "unset";

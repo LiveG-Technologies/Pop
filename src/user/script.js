@@ -3,7 +3,7 @@ function change(user) {
         // Signed in.
     } else {
         // Signed out.
-        window.location.href = "../index.html";
+        window.location.href = "../signin.html";
     }
 }
 

@@ -38,6 +38,8 @@ button {
     background-color: #4286f4;
     border: solid 5px #415ff4;
     border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 button:focus {
@@ -54,4 +56,49 @@ button:active {
     background-color: #578de5;
     border: solid 5px #4861db;
     cursor: pointer;
+}
+
+button.secondary {
+    background-color: #639df9;
+    border: solid 5px #5083d3;
+}
+
+button.secondary:hover {
+    background-color: #72a6f9;
+    border: solid 5px #6c84fc;
+}
+
+button.secondary:active {
+    background-color: #6795e0;
+    border: solid 5px #586dd3;
+}
+
+button.bad {
+    background-color: #ff6060;
+    border: solid 5px #ef4343;
+}
+
+button.bad:hover {
+    background-color: #f76767;
+    border: solid 5px #ed5050;
+}
+
+button.bad:active {
+    background-color: #db5c5c;
+    border: solid 5px #d64646;
+}
+
+input {
+    color: black;
+    font-size: 20px;
+    font-family: "Roboto", "Piboto", sans-serif;
+    padding: 10px;
+    background-color: #ededed;
+    border: solid 5px #cecece;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+input:focus {
+    outline: 0;
 }

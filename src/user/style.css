@@ -2,15 +2,6 @@ body {
     font-family: "Roboto", "Piboto", sans-serif;
 }
 
-#info {
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.big {
-    font-size: 30px;
-}
-
 button {
     color: white;
     font-size: 20px;
@@ -84,14 +75,29 @@ input:focus {
     outline: 0;
 }
 
-#error {
-    color: #d64646;
+.ua {
+    font-size: 25px;
 }
 
-#signIn {
-    display: none;
+.uapic {
+    background-color: #609dff;
+    border: 5px solid #5571fc;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 30px;
 }
 
-#signUp {
-    display: none;
+.uacontent {
+    position: relative;
+    right: 5px;
+    bottom: 5px;
+}
+
+.uaheading {
+    font-size: 30px;
+    position: relative;
+    bottom: 2px;
 }

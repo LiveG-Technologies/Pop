@@ -102,3 +102,19 @@ input {
 input:focus {
     outline: 0;
 }
+
+#error {
+    color: #d64646;
+}
+
+#login {
+    display: none;
+}
+
+#logout {
+    display: none;
+}
+
+#signup {
+    display: none;
+}

@@ -4,18 +4,11 @@ function change(user) {
     if (typeof(Storage) !== "undefined") {
         if (user && user.uid != currentUid) {
             // Sign in operation.
-            firebase.database().ref("users/" + user.uid + "/_settings/name").once("value").then(function(snapshot) {
-                document.getElementById("signOutTitle").innerHTML = "Hello, " + snapshot.val() + "!";
-
-                document.getElementById("signIn").style.display = "none";
-                document.getElementById("signUp").style.display = "none";
-                document.getElementById("signOut").style.display = "unset";
-            });
+            window.location.href = "home.html"
         } else {
             // Sign out operation.
             document.getElementById("signIn").style.display = "unset";
             document.getElementById("signUp").style.display = "none";
-            document.getElementById("signOut").style.display = "none";
         }
     } else {
         alert("Sorry! You will not be able to use your Pop! account on this device as it does not support HTML5 web storage.");
@@ -60,7 +53,6 @@ function signOutBefore() {
     if (checkFields()) {
         document.getElementById("signIn").style.display = "none";
         document.getElementById("signUp").style.display = "unset";
-        document.getElementById("signOut").style.display = "none";
     }
 }
 
@@ -85,7 +77,6 @@ function signOut() {
 function reset() {
     document.getElementById("signIn").style.display = "unset";
     document.getElementById("signUp").style.display = "none";
-    document.getElementById("signOut").style.display = "none";
 }
 
 var input = document.getElementById("pass");

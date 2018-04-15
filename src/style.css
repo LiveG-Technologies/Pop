@@ -29,3 +29,29 @@ body {
 .big {
     font-size: 30px;
 }
+
+button {
+    color: white;
+    font-size: 20px;
+    font-family: "Roboto", "Piboto", sans-serif;
+    padding: 10px;
+    background-color: #4286f4;
+    border: solid 5px #415ff4;
+    border-radius: 10px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button:hover {
+    background-color: #609dff;
+    border: solid 5px #5571fc;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #578de5;
+    border: solid 5px #4861db;
+    cursor: pointer;
+}

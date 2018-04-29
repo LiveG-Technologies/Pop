@@ -15,7 +15,7 @@ function change(user) {
 
         firebase.database().ref("users/" + user.uid + "/_settings/ppic").on("value", function(snapshot) {
             if (getURLParameter("test") != "true") {
-                $(".myimg").param("src", "ppics/" + ppics[snapshot.val()] + ".png");
+                $(".myimg").attr("src", "ppics/" + ppics[snapshot.val()] + ".png");
             }
         });
     } else {

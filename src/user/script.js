@@ -54,3 +54,10 @@ $(".editable").parent().parent().mouseenter(function(event) {
 $(".editable").mouseleave(function() {
     $(event.target).parent().addClass("hidden");
 });
+
+$("#setname").keypress(function (event) {
+    if (event.which == 13) {
+        setName();
+        return false;
+    }
+});

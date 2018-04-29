@@ -1,11 +1,12 @@
 var ppics = ["smile", "laugh", "love", "think", "crazy", "cool", "moneymouth", "mindblown", "ghost", "alien", "robot", "monkey", "coderm", "coderf", "scientistm", "scientistf"];
+var currentUid = null;
 
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
 }
 
 function change(user) {
-    if (user && user.uid != currentUid) {
+    if (user && user.uid != null) {
         // Signed in.
         firebase.database().ref("users/" + user.uid + "/_settings/name").on("value", function(snapshot) {
             if (getURLParameter("test") != "true") {
@@ -26,9 +27,10 @@ function change(user) {
     }
 }
 
-var currentUid = null;
 firebase.auth().onAuthStateChanged(function(user) {
     // Checks if user auth state has changed.
+    currentUid = user.uid;
+
     change(user);
 });
 
@@ -37,6 +39,8 @@ function signOut() {
 }
 
 function setName() {
+    firebase.database().ref("users/" + currentUid + "/_settings/name").set(profanity.clean($("#setname").val()));
+
     $(".nameedit").addClass("hidden");
     $(".notnameedit").removeClass("hidden");
 }

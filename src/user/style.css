@@ -149,3 +149,7 @@ section.main {
 .myimg {
     height: 100px;
 }
+
+.editable {
+    margin-left: 10px;
+}

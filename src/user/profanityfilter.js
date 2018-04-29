@@ -8,7 +8,7 @@ var profanity = {
         var returns = "";
 
         for (var i = 0; i < input.length; i++) {
-            if ($.inArray(input[i].toLowerCase(), profanity.badWords) > -1) {
+            if ($.inArray(input[i].toLowerCase().replace(/[.,\/#!£$€%\^&\*;:{}=\-_`~()]/g,""), profanity.badWords) > -1) {
                 returns += Array(input[i].length + 1).join("*") + " ";
             } else {
                 returns += input[i] + " ";

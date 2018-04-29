@@ -29,7 +29,7 @@ function change(user) {
 
 firebase.auth().onAuthStateChanged(function(user) {
     // Checks if user auth state has changed.
-    currentUid = user.uid;
+    if (user) {currentUid = user.uid;} else {currentUid = null;}
 
     change(user);
 });
@@ -39,7 +39,7 @@ function signOut() {
 }
 
 function setName() {
-    firebase.database().ref("users/" + currentUid + "/_settings/name").set(profanity.clean($("#setname").val()));
+    firebase.database().ref("users/" + currentUid + "/_settings/name").set(profanity.clean($("#setname").val().value.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;")));
 
     $(".nameedit").addClass("hidden");
     $(".notnameedit").removeClass("hidden");

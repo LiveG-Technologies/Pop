@@ -60,7 +60,7 @@ function signUp() {
     document.getElementById("error").innerHTML = "";
     if (checkUsername()) {
         firebase.auth().createUserWithEmailAndPassword(document.getElementById("user").value, document.getElementById("pass").value).then(function() {
-            firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/name").set(document.getElementById("name").value.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;"));
+            firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/name").set(profanity.clean(document.getElementById("name").value.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;")));
             firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/ppic").set("&#128512;");
             firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/pcol").set(0);
         }).catch(function(error) {

@@ -5,6 +5,7 @@
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
         <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
@@ -22,11 +23,21 @@
         </script>
     </head>
     <body>
-        <div class="ua">
-            <span class="uapic" id="myua"><span class="uacontent" id="myuser">🤣</span></span>
-            <span class="uaheading">Username</span>
+        <header>
+            <span class="leftitem"><i class="fas fa-home"></i> Home</span>
+            <span class="rightitem"><i class="fas fa-ellipsis-h actionbutton" onclick="$('#moreops').toggleClass('hidden');"></i></span>
+        </header>
+        <section class="main">
+            <img class="myimg" src="ppics/smile.png" />
+            <h1 class="myname">Username</h1>
+        </section>
+        <div class="hidden menu" id="moreops">
+            <div class="menuitem" onclick="signOut();">Sign out</div>
+            <div class="menuitem">How to be nice in the community</div>
+            <div class="menuitem">Help and forum</div>
+            <div class="menuitem">About</div>
+            <div class="fill" onclick="$(this).parent().addClass('hidden');"></div>
         </div>
-        <button onclick="signOut();" class="bad">Sign Out</button>
     </body>
     <script src="script.js"></script>
 </html>

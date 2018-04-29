@@ -1,10 +1,23 @@
+var ppics = ["smile", "laugh", "love", "think", "crazy", "cool", "moneymouth", "mindblown", "ghost", "alien", "robot", "monkey", "coderm", "coderf", "scientistm", "scientistf"];
+
 function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+    return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
 }
 
 function change(user) {
     if (user && user.uid != currentUid) {
         // Signed in.
+        firebase.database().ref("users/" + user.uid + "/_settings/name").on("value", function(snapshot) {
+            if (getURLParameter("test") != "true") {
+                $(".myname").text(snapshot.val());
+            }
+        });
+
+        firebase.database().ref("users/" + user.uid + "/_settings/ppic").on("value", function(snapshot) {
+            if (getURLParameter("test") != "true") {
+                $(".myimg").param("src", "ppics/" + ppics[snapshot.val()] + ".png");
+            }
+        });
     } else {
         // Signed out.
         if (getURLParameter("test") != "true") {

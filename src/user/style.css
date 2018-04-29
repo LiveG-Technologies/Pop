@@ -75,30 +75,77 @@ input:focus {
     outline: 0;
 }
 
-.ua {
-    font-size: 25px;
+header {
+    font-size: 30px;
+    background-color: #cecece;
+    padding: 15px;
+    margin: -8px;
+    margin-bottom: 10px;
 }
 
-.uapic {
-    background-color: #609dff;
-    border: 5px solid #5571fc;
-    width: 25px;
-    height: 25px;
-    display: inline-block;
+section {
+    margin: -8px;
+    margin-top: -10px;
+    padding: 15px;
+}
+
+section.main {
+    background-color: #ededed;
+    font-size: 20px;
     text-align: center;
+}
+
+.leftitem {
+    float: left;
+}
+
+.rightitem {
+    display: block;
+    text-align: right;
+}
+
+.actionbutton {
+    cursor: pointer;
+    border-radius: 5px;
     padding: 10px;
-    border-radius: 30px;
+    margin: -10px;
+}
+
+.actionbutton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 65px);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+.menuitem {
+    background-color: white;
+    font-size: 25px;
+    padding: 10px;
+    border-bottom: 5px solid #ededed;
     cursor: pointer;
 }
 
-.uacontent {
-    position: relative;
-    right: 5px;
-    bottom: 5px;
+.menuitem:hover {
+    background-color: #ededed;
 }
 
-.uaheading {
-    font-size: 30px;
-    position: relative;
-    bottom: 2px;
+.fill {
+    flex: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.myimg {
+    height: 100px;
 }

@@ -39,7 +39,7 @@ function signOut() {
 }
 
 function setName() {
-    firebase.database().ref("users/" + currentUid + "/_settings/name").set(profanity.clean($("#setname").val().value.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;")));
+    firebase.database().ref("users/" + currentUid + "/_settings/name").set(profanity.clean($("#setname").val().replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;")));
 
     $(".nameedit").addClass("hidden");
     $(".notnameedit").removeClass("hidden");

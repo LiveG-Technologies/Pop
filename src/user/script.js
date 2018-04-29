@@ -55,9 +55,11 @@ $(".editable").mouseleave(function() {
     $(event.target).parent().addClass("hidden");
 });
 
-$("#setname").keypress(function (event) {
-    if (event.which == 13) {
+var input = document.getElementById("setname");
+
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
         setName();
-        return false;
     }
 });

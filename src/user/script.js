@@ -35,3 +35,18 @@ firebase.auth().onAuthStateChanged(function(user) {
 function signOut() {
     firebase.auth().signOut();
 }
+
+function setName() {
+    $(".nameedit").addClass("hidden");
+    $(".notnameedit").removeClass("hidden");
+}
+
+$(".editable").parent().parent().mouseenter(function(event) {
+    $(event.target).parent().find(".editablecontainer").removeClass("hidden");
+}).mouseleave(function() {
+    $(event.target).parent().find(".editablecontainer").addClass("hidden");
+});
+
+$(".editable").mouseleave(function() {
+    $(event.target).parent().addClass("hidden");
+});

@@ -29,7 +29,11 @@
         </header>
         <section class="main">
             <img class="myimg" src="ppics/smile.png" />
-            <h1 class="myname">Username</h1>
+            <h1 class="notnameedit"><span class="myname">Loading...</span> <span class="hidden editablecontainer"><i class="fas fa-edit actionbutton editable" onclick="$('#setname').val($(this).parent().parent().find('.myname').text()); $('.nameedit').removeClass('hidden'); $('.notnameedit').addClass('hidden');"></i></span></h1>
+            <div class="nameedit hidden">
+                <br>
+                <input id="setname"></input><button onclick="setName();">Set</button>
+            </div>
         </section>
         <div class="hidden menu" id="moreops">
             <div class="menuitem" onclick="signOut();">Sign out</div>

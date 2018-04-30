@@ -17,9 +17,9 @@ function change(user) {
         firebase.database().ref("users/" + user.uid + "/_settings/ppic").on("value", function(snapshot) {
             if (getURLParameter("test") != "true") {
                 if (user.uid == "sbh6Y1L6Q1as5rekRqRKTdrQGo53") {
-                    $(".myimg").attr("src", "ppics/popteam.png");
+                    $(".myppic").attr("src", "ppics/popteam.png");
                 } else {
-                    $(".myimg").attr("src", "ppics/" + ppics[snapshot.val()] + ".png");
+                    $(".myppic").attr("src", "ppics/" + ppics[snapshot.val()] + ".png");
                 }
             }
         });
@@ -49,6 +49,13 @@ function setName() {
     $(".notnameedit").removeClass("hidden");
 }
 
+function setPpic(ppic) {
+    console.log(ppic);
+    firebase.database().ref("users/" + currentUid + "/_settings/ppic").set(ppic);
+
+    $("#moreops").addClass("hidden");
+}
+
 $(".editable").parent().parent().mouseenter(function(event) {
     $(event.target).parent().find(".editablecontainer").removeClass("hidden");
 }).mouseleave(function() {
@@ -67,3 +74,7 @@ input.addEventListener("keyup", function(event) {
         setName();
     }
 });
+
+for (i = 0; i < ppics.length; i++) {
+    $("#ppicedit").append(`<img class="ppic item" src="ppics/` + ppics[i] + `.png" onclick="setPpic(` + i + `);" />`);
+}

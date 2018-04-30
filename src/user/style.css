@@ -75,11 +75,21 @@ input:focus {
     outline: 0;
 }
 
+.preheader {
+    width: 0;
+    height: 60px;
+    margin: -8px;
+    margin-bottom: 10px;
+}
+
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 30px);
     font-size: 30px;
     background-color: #cecece;
     padding: 15px;
-    margin: -8px;
     margin-bottom: 10px;
 }
 
@@ -117,10 +127,10 @@ section.main {
 
 .menu {
     position: absolute;
-    top: 65px;
+    top: 60px;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 60px);
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
@@ -138,6 +148,20 @@ section.main {
     background-color: #ededed;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
 .fill {
     flex: 1;
 }
@@ -146,10 +170,34 @@ section.main {
     display: none;
 }
 
-.myimg {
+.ppic {
     height: 100px;
 }
 
 .editable {
     margin-left: 10px;
+}
+
+.item {
+    width: calc(calc(100vw / 10) - 20px);
+    height: unset;
+    padding: 10px;
+}
+
+@media (max-width: 800px) {
+    .item {
+        width: calc(calc(100vw / 8) - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .item {
+        width: calc(calc(100vw / 6) - 20px);
+    }
+}
+
+@media (max-width: 400px) {
+    .item {
+        width: calc(calc(100vw / 4) - 20px);
+    }
 }

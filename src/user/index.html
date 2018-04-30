@@ -23,12 +23,13 @@
         </script>
     </head>
     <body>
+        <div class="preheader"></div>
         <header>
             <span class="leftitem"><i class="fas fa-home"></i> Home</span>
             <span class="rightitem"><i class="fas fa-ellipsis-h actionbutton" onclick="$('#moreops').toggleClass('hidden');"></i></span>
         </header>
         <section class="main">
-            <img class="myimg" src="ppics/smile.png" />
+            <img class="myppic ppic clickable" src="ppics/smile.png" onclick="$('#ppicedit').removeClass('hidden');" />
             <h1 class="notnameedit"><span class="myname">Loading...</span><span class="hidden editablecontainer"><i class="fas fa-edit actionbutton editable" onclick="$('#setname').val($(this).parent().parent().find('.myname').text()); $('.nameedit').removeClass('hidden'); $('.notnameedit').addClass('hidden');"></i></span></h1>
             <div class="nameedit hidden">
                 <br>
@@ -41,6 +42,13 @@
             <div class="menuitem">Help and forum</div>
             <div class="menuitem">About</div>
             <div class="fill" onclick="$(this).parent().addClass('hidden');"></div>
+        </div>
+        <div class="hidden screen" id="ppicedit">
+            <div class="preheader"></div>
+            <header>
+                <span class="leftitem"><i class="fas fa-user"></i> Profile picture</span>
+                <span class="rightitem"><i class="fas fa-times actionbutton" onclick="$(this).parent().parent().parent().addClass('hidden');"></i></span>
+            </header>
         </div>
     </body>
     <script src="profanityfilter.js"></script>

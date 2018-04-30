@@ -16,7 +16,11 @@ function change(user) {
 
         firebase.database().ref("users/" + user.uid + "/_settings/ppic").on("value", function(snapshot) {
             if (getURLParameter("test") != "true") {
-                $(".myimg").attr("src", "ppics/" + ppics[snapshot.val()] + ".png");
+                if (user.uid == "sbh6Y1L6Q1as5rekRqRKTdrQGo53") {
+                    $(".myimg").attr("src", "ppics/popteam.png");
+                } else {
+                    $(".myimg").attr("src", "ppics/" + ppics[snapshot.val()] + ".png");
+                }
             }
         });
     } else {

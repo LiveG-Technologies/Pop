@@ -93,6 +93,41 @@ header {
     margin-bottom: 10px;
 }
 
+.prefooter {
+    width: 0;
+    height: 30px;
+    margin: -8px;
+    margin-bottom: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100vw - 30px);
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #545454;
+    color: white;
+    padding: 15px;
+}
+
+.footeritem {
+    display: inline-block;
+    width: 100px;
+    position: relative;
+    top: -10px;
+}
+
+.footeritem.selected {
+    color: #639df9;
+}
+
+.footericon {
+    font-size: 30px;
+}
+
 section {
     margin: -8px;
     margin-top: -10px;

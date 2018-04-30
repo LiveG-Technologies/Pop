@@ -36,6 +36,21 @@
                 <input id="setname"></input><button onclick="setName();">Set</button>
             </div>
         </section>
+        <div class="prefooter"></div>
+        <footer>
+            <div class="footeritem tappable" onclick="window.location.href = 'challenges.html?test=' + getURLParameter('test');">
+                <i class="fas fa-tasks footericon"></i><br>
+                Challenges
+            </div>
+            <div class="footeritem tappable selected" onclick="window.location.href = 'index.html?test=' + getURLParameter('test');">
+                <i class="fas fa-user footericon"></i><br>
+                Profile
+            </div>
+            <div class="footeritem tappable" onclick="window.location.href = 'community.html?test=' + getURLParameter('test');">
+                <i class="fas fa-users footericon"></i><br>
+                Community
+            </div>
+        </footer>
         <div class="hidden menu" id="moreops">
             <div class="menuitem" onclick="signOut();">Sign out</div>
             <div class="menuitem">How to be nice in the community</div>

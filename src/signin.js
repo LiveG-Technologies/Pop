@@ -68,7 +68,7 @@ function signOutBefore() {
 function signUp() {
     document.getElementById("error").innerHTML = "";
     if (checkUsername()) {
-        firebase.auth().createUserWithEmailAndPassword(document.getElementById("user").value, document.getElementById("pass").value).then(function() {signingUp = false;}).catch(function(error) {
+        firebase.auth().createUserWithEmailAndPassword(document.getElementById("user").value, document.getElementById("pass").value).then(function() {signingUp = true;}).catch(function(error) {
             document.getElementById("error").innerHTML = "Oops! " + error.message.replace(/email/g, "e-mail").replace(/E-mail/g, "E-mail");
         });
     }

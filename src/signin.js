@@ -4,7 +4,7 @@ function change(user) {
     if (typeof(Storage) !== "undefined") {
         if (user && user.uid != currentUid) {
             // Sign in operation.
-            window.location.href = "user/index.html"
+            window.location.href = "user/index.html";
         } else {
             // Sign out operation.
             document.getElementById("signIn").style.display = "unset";
@@ -16,9 +16,12 @@ function change(user) {
 }
 
 var currentUid = null;
+var signingUp = false;
 firebase.auth().onAuthStateChanged(function(user) {
     // Checks if user auth state has changed.
-    change(user);
+    if (!signingUp) {
+        change(user);
+    }
 });
 
 function checkFields() {
@@ -59,10 +62,14 @@ function signOutBefore() {
 function signUp() {
     document.getElementById("error").innerHTML = "";
     if (checkUsername()) {
+        signingUp = false;
+
         firebase.auth().createUserWithEmailAndPassword(document.getElementById("user").value, document.getElementById("pass").value).then(function() {
-            firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/name").set(profanity.clean(document.getElementById("name").value.substring(0, 20)));
-            firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/ppic").set("&#128512;");
-            firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/pcol").set(0);
+            firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/name").set(profanity.clean(document.getElementById("name").value.substring(0, 20))).then(function() {
+                firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/_settings/ppic").set(0).then(function() {
+                    window.location.href = "user/index.html";
+                });
+            });
         }).catch(function(error) {
             document.getElementById("error").innerHTML = "Oops! " + error.message.replace(/email/g, "e-mail").replace(/E-mail/g, "E-mail");
         });

@@ -53,7 +53,7 @@ function setPpic(ppic) {
     console.log(ppic);
     firebase.database().ref("users/" + currentUid + "/_settings/ppic").set(ppic);
 
-    $("#moreops").addClass("hidden");
+    $("#ppicedit").addClass("hidden");
 }
 
 $(".editable").parent().parent().mouseenter(function(event) {
@@ -76,5 +76,5 @@ input.addEventListener("keyup", function(event) {
 });
 
 for (i = 0; i < ppics.length; i++) {
-    $("#ppicedit").append(`<img class="ppic item" src="ppics/` + ppics[i] + `.png" onclick="setPpic(` + i + `);" />`);
+    $("#ppicedit").append(`<img class="ppic item tappable" src="ppics/` + ppics[i] + `.png" onclick="setPpic(` + i + `);" />`);
 }

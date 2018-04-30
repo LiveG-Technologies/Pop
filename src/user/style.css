@@ -148,7 +148,7 @@ section.main {
     background-color: #ededed;
 }
 
-.clickable {
+.tappable {
     cursor: pointer;
 }
 
